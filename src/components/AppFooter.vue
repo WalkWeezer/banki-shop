@@ -11,12 +11,12 @@
         </nav>
 
         <div class="footer__tel">
-          <img src="/images/tel.png" width="16" height="16" alt="" />
+          <img :src="telIcon" width="16" height="16" alt="" />
           <a href="tel:+78125555555">+7 (812) 555-55-55</a>
         </div>
 
         <div class="footer__address">
-          <img src="/images/address.png" width="14" height="18" alt="" />
+          <img :src="addressIcon" width="14" height="18" alt="" />
           <a
             href="https://yandex.ru/maps/-/CDabZOmh"
             target="_blank"
@@ -37,8 +37,11 @@ import { NAV_LINKS } from '@/data/products';
 export default Vue.extend({
   name: 'AppFooter',
   data() {
+    const base = process.env.BASE_URL || '/';
     return {
       links: NAV_LINKS,
+      telIcon: `${base}images/tel.png`,
+      addressIcon: `${base}images/address.png`,
     };
   },
 });
