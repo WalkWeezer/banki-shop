@@ -3,10 +3,13 @@ import VueRouter from 'vue-router';
 import CatalogPage from '@/components/CatalogPage.vue';
 import CartPage from '@/components/CartPage.vue';
 
+declare const __BASE_URL__: string;
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
   mode: 'history',
+  base: __BASE_URL__,
   routes: [
     {
       path: '/',

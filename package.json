@@ -10,7 +10,7 @@
     "dev": "webpack serve --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
     "build:gh": "cross-env PUBLIC_PATH=/banki-shop/ webpack --mode production --config webpack.config.js",
-    "deploy": "npm run build:gh && npx --yes gh-pages@6.1.1 -d dist",
+    "deploy": "npm run build:gh && node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\" && npx --yes gh-pages@6.1.1 -d dist",
     "start": "webpack serve --mode development --config webpack.config.js"
   },
   "dependencies": {
