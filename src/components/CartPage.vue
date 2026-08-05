@@ -30,7 +30,7 @@ import Vue from 'vue';
 import { asset, cartStore, delFromCart } from '@/stores/store';
 
 export default Vue.extend({
-  name: 'BsCart',
+  name: 'CartPage',
   data() {
     return {
       cartStore,

@@ -2,8 +2,6 @@
 
 Вёрстка по [макету Figma](https://www.figma.com/file/6LxPDEsauEGanhR2nDW68X/Banki.shop?node-id=0%3A1) на **Vue 2 (Options API)** + TypeScript + Webpack.
 
-UI и структура страницы соответствуют референсу: https://banki-shop-example.vercel.app/
-
 **Демо:** https://walkweezer.github.io/banki-shop/  
 **Репозиторий:** https://github.com/WalkWeezer/banki-shop
 

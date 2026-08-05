@@ -17,7 +17,7 @@ import Vue from 'vue';
 import { cartStore } from '@/stores/store';
 
 export default Vue.extend({
-  name: 'BsCartIcon',
+  name: 'CartIcon',
   computed: {
     cartCount(): number {
       return cartStore.cart ? cartStore.cart.length : 0;

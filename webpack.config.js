@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
-/** @type {import('webpack').Configuration} */
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
   const publicPath = process.env.PUBLIC_PATH || '/';
@@ -85,7 +84,6 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'index.html'),
         title: 'Banki.shop',
-        favicon: path.resolve(__dirname, 'public/logo.png'),
       }),
       new CopyWebpackPlugin({
         patterns: [

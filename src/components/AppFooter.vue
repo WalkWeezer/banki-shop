@@ -35,7 +35,7 @@ import Vue from 'vue';
 import { asset } from '@/stores/store';
 
 export default Vue.extend({
-  name: 'BsFooter',
+  name: 'AppFooter',
   methods: {
     asset,
   },

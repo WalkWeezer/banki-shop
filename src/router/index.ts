@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import BsCatalog from '@/components/BsCatalog.vue';
-import BsCart from '@/components/BsCart.vue';
+import CatalogPage from '@/components/CatalogPage.vue';
+import CartPage from '@/components/CartPage.vue';
 
 Vue.use(VueRouter);
 
@@ -10,13 +10,13 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'BsCatalog',
-      component: BsCatalog,
+      name: 'Catalog',
+      component: CatalogPage,
     },
     {
       path: '/cart',
-      name: 'BsCart',
-      component: BsCart,
+      name: 'Cart',
+      component: CartPage,
     },
   ],
 });

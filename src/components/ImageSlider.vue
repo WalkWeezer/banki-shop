@@ -19,7 +19,7 @@ import Vue, { PropType } from 'vue';
 import { asset } from '@/stores/store';
 
 export default Vue.extend({
-  name: 'BsSlider',
+  name: 'ImageSlider',
   props: {
     imgs: {
       required: true,

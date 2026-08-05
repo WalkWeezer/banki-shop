@@ -42,7 +42,7 @@
           <input type="submit" class="header__search-btn btn" value="Найти" />
         </form>
         <router-link class="header__cart" to="/cart">
-          <bs-cart-icon />
+          <cart-icon />
         </router-link>
       </div>
     </div>
@@ -51,12 +51,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import BsCartIcon from '@/components/BsCartIcon.vue';
+import CartIcon from '@/components/CartIcon.vue';
 import { setSearchValue } from '@/stores/store';
 
 export default Vue.extend({
-  name: 'BsHeader',
-  components: { BsCartIcon },
+  name: 'AppHeader',
+  components: { CartIcon },
   data() {
     return {
       isClicked: false,

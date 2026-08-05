@@ -4,7 +4,7 @@
       <div class="main__body">
         <h1 class="main__title">Картины эпохи возрождения</h1>
         <div class="main__blocks-body">
-          <bs-block
+          <product-card
             v-for="item in sortedPaints"
             :key="item.id"
             :paint-item="item"
@@ -17,12 +17,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import BsBlock from '@/components/BsBlock.vue';
+import ProductCard from '@/components/ProductCard.vue';
 import { paintsStore, searchStore } from '@/stores/store';
 
 export default Vue.extend({
-  name: 'BsCatalog',
-  components: { BsBlock },
+  name: 'CatalogPage',
+  components: { ProductCard },
   data() {
     return {
       sortedPaints: paintsStore.paints.slice(),

@@ -1,21 +1,21 @@
 <template>
   <div class="wrapper">
-    <bs-header />
+    <app-header />
     <router-view />
-    <bs-footer />
+    <app-footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import BsHeader from '@/components/BsHeader.vue';
-import BsFooter from '@/components/BsFooter.vue';
+import AppHeader from '@/components/AppHeader.vue';
+import AppFooter from '@/components/AppFooter.vue';
 
 export default Vue.extend({
   name: 'App',
   components: {
-    BsHeader,
-    BsFooter,
+    AppHeader,
+    AppFooter,
   },
 });
 </script>

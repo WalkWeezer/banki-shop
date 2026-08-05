@@ -11,13 +11,13 @@
             <h6 class="block__old-price">{{ paintItem.oldPrice ? paintItem.oldPrice + '$' : '' }}</h6>
             <h3 class="block__new-price">{{ paintItem.newPrice }} $</h3>
           </div>
-          <div v-else class="block__text">Продана на аукцоне</div>
+          <div v-else class="block__text">Продана на аукционе</div>
           <div
             v-if="!paintItem.isSold"
             class="block__btn btn"
             @click="sendData"
           >
-            <bs-preloader v-if="isLoading" />
+            <preloader v-if="isLoading" />
             <div v-else>{{ btnText }}</div>
           </div>
         </div>
@@ -44,7 +44,7 @@
               Закрыть
             </button>
           </div>
-          <bs-slider :imgs="paintItem.img" :interval="10000" />
+          <image-slider :imgs="paintItem.img" :interval="10000" />
           <h2 class="modal__title">{{ paintItem.title }}</h2>
           <div class="modal__desc">{{ paintItem.desc }}</div>
           <div class="modal__foot">
@@ -52,13 +52,13 @@
               <h6 class="block__old-price">{{ paintItem.oldPrice ? paintItem.oldPrice + '$' : '' }}</h6>
               <h3 class="block__new-price">{{ paintItem.newPrice }} $</h3>
             </div>
-            <div v-else class="block__text modal-item">Продана на аукцоне</div>
+            <div v-else class="block__text modal-item">Продана на аукционе</div>
             <div
               v-if="contains(cartStore.cart, paintItem)"
               class="block__btn btn del modal-item"
               @click="delData"
             >
-              <bs-preloader v-if="isLoadingDel" />
+              <preloader v-if="isLoadingDel" />
               <div v-else>Удалить</div>
             </div>
             <div
@@ -66,7 +66,7 @@
               class="block__btn btn modal-item"
               @click="sendData"
             >
-              <bs-preloader v-if="isLoading" />
+              <preloader v-if="isLoading" />
               <div v-else>{{ btnText }}</div>
             </div>
           </div>
@@ -78,8 +78,8 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import BsPreloader from '@/components/BsPreloader.vue';
-import BsSlider from '@/components/BsSlider.vue';
+import Preloader from '@/components/Preloader.vue';
+import ImageSlider from '@/components/ImageSlider.vue';
 import { addToCart, asset, cartStore, delFromCart } from '@/stores/store';
 
 interface PaintItem {
@@ -93,8 +93,8 @@ interface PaintItem {
 }
 
 export default Vue.extend({
-  name: 'BsBlock',
-  components: { BsSlider, BsPreloader },
+  name: 'ProductCard',
+  components: { ImageSlider, Preloader },
   props: {
     paintItem: {
       required: true,
