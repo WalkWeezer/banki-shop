@@ -1,9 +1,9 @@
 import { NavLink, Product } from '@/types';
 
-const BASE_URL = process.env.BASE_URL || '/';
+declare const __BASE_URL__: string;
 
 function asset(path: string): string {
-  return `${BASE_URL}${path.replace(/^\//, '')}`;
+  return `${__BASE_URL__}${path.replace(/^\//, '')}`;
 }
 
 export const NAV_LINKS: NavLink[] = [

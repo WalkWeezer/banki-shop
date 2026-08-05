@@ -33,9 +33,4 @@ declare module '*.woff2' {
   export default src;
 }
 
-declare namespace NodeJS {
-  interface ProcessEnv {
-    NODE_ENV: 'development' | 'production' | 'test';
-    BASE_URL: string;
-  }
-}
+declare const __BASE_URL__: string;

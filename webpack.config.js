@@ -83,7 +83,7 @@ module.exports = (env, argv) => {
     plugins: [
       new VueLoaderPlugin(),
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'public/index.html'),
+        template: path.resolve(__dirname, 'index.html'),
         title: 'Banki.shop — Картины эпохи возрождения',
       }),
       new CopyWebpackPlugin({
@@ -96,13 +96,16 @@ module.exports = (env, argv) => {
       }),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : 'development'),
-        'process.env.BASE_URL': JSON.stringify(publicPath),
+        __BASE_URL__: JSON.stringify(publicPath),
       }),
     ],
     devServer: {
-      static: {
-        directory: path.resolve(__dirname, 'public'),
-      },
+      static: [
+        {
+          directory: path.resolve(__dirname, 'public/images'),
+          publicPath: '/images',
+        },
+      ],
       historyApiFallback: true,
       port: 8080,
       hot: true,

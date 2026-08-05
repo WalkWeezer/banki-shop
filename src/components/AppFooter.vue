@@ -34,14 +34,15 @@
 import Vue from 'vue';
 import { NAV_LINKS } from '@/data/products';
 
+declare const __BASE_URL__: string;
+
 export default Vue.extend({
   name: 'AppFooter',
   data() {
-    const base = process.env.BASE_URL || '/';
     return {
       links: NAV_LINKS,
-      telIcon: `${base}images/tel.png`,
-      addressIcon: `${base}images/address.png`,
+      telIcon: `${__BASE_URL__}images/tel.png`,
+      addressIcon: `${__BASE_URL__}images/address.png`,
     };
   },
 });
