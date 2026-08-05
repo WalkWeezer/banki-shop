@@ -2,6 +2,9 @@
 
 Интернет-магазин картин эпохи Возрождения. Тестовое задание: вёрстка по [макету Figma](https://www.figma.com/file/6LxPDEsauEGanhR2nDW68X/Banki.shop?node-id=0%3A1) на **Vue 2 (Options API)** + TypeScript + Webpack.
 
+**Демо:** https://walkweezer.github.io/banki-shop/  
+**Репозиторий:** https://github.com/WalkWeezer/banki-shop
+
 ## Стек
 
 - Vue 2.7 (Options API)
@@ -18,14 +21,14 @@
 
 ## Требования
 
-- Node.js **16.x** (также работает на 18/20)
+- Node.js **16.x** (также работает на 18+)
 - npm 8+
 
 ## Установка и запуск
 
 ```bash
 # клонировать репозиторий
-git clone <url-репозитория>
+git clone https://github.com/WalkWeezer/banki-shop.git
 cd banki-shop
 
 # установить зависимости
@@ -47,6 +50,12 @@ npm run build
 
 ```bash
 npx --yes serve dist
+```
+
+### Деплой на GitHub Pages
+
+```bash
+npm run deploy
 ```
 
 ## Структура

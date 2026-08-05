@@ -9,6 +9,8 @@
   "scripts": {
     "dev": "webpack serve --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
+    "build:gh": "cross-env PUBLIC_PATH=/banki-shop/ webpack --mode production --config webpack.config.js",
+    "deploy": "npm run build:gh && npx --yes gh-pages@6.1.1 -d dist",
     "start": "webpack serve --mode development --config webpack.config.js"
   },
   "dependencies": {
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^16.18.96",
     "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.11.0",
     "html-webpack-plugin": "^5.6.0",
     "sass": "^1.77.8",

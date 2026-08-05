@@ -7,6 +7,7 @@ const webpack = require('webpack');
 /** @type {import('webpack').Configuration} */
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
+  const publicPath = process.env.PUBLIC_PATH || '/';
 
   return {
     entry: path.resolve(__dirname, 'src/main.ts'),
@@ -15,7 +16,7 @@ module.exports = (env, argv) => {
       filename: isProd ? 'js/[name].[contenthash:8].js' : 'js/[name].js',
       assetModuleFilename: 'assets/[name].[hash:8][ext]',
       clean: true,
-      publicPath: '/',
+      publicPath,
     },
     resolve: {
       extensions: ['.ts', '.js', '.vue', '.json'],
