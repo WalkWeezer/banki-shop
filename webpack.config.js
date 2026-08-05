@@ -48,7 +48,7 @@ module.exports = (env, argv) => {
             {
               loader: 'sass-loader',
               options: {
-                additionalData: `@import "@/assets/styles/variables.scss";`,
+                additionalData: `@import "@/assets/scss/variables.scss";`,
                 api: 'legacy',
                 sassOptions: {
                   quietDeps: true,
@@ -84,13 +84,17 @@ module.exports = (env, argv) => {
       new VueLoaderPlugin(),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'index.html'),
-        title: 'Banki.shop — Картины эпохи возрождения',
+        title: 'Banki.shop',
+        favicon: path.resolve(__dirname, 'public/logo.png'),
       }),
       new CopyWebpackPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, 'public/images'),
-            to: path.resolve(__dirname, 'dist/images'),
+            from: path.resolve(__dirname, 'public'),
+            to: path.resolve(__dirname, 'dist'),
+            globOptions: {
+              ignore: ['**/index.html'],
+            },
           },
         ],
       }),
@@ -100,12 +104,6 @@ module.exports = (env, argv) => {
       }),
     ],
     devServer: {
-      static: [
-        {
-          directory: path.resolve(__dirname, 'public/images'),
-          publicPath: '/images',
-        },
-      ],
       historyApiFallback: true,
       port: 8080,
       hot: true,
